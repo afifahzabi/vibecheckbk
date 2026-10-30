@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VibeCheck BK - Ruang Aman Siswa | Layanan Bimbingan dan Konseling Sekolah</title>
+<meta name="description" content="VibeCheck BK adalah ruang aman siswa untuk konseling, curhat anonim, info karier dan studi lanjut, serta psikoedukasi kesehatan mental remaja bersama Guru BK Muhammad Afif Ahzabi Ainur Rohim, S.Pd.">
+<meta name="keywords" content="bimbingan konseling sekolah, guru BK, curhat anonim siswa, kesehatan mental remaja, konseling online, SNBP, SNBT, kedinasan, pencegahan bullying">
+<meta name="author" content="Muhammad Afif Ahzabi Ainur Rohim, S.Pd.">
+<meta name="theme-color" content="#7c9885">
+<meta property="og:title" content="VibeCheck BK - Ruang Aman Siswa">
+<meta property="og:description" content="Tempat cerita, belajar mengenal diri, dan merencanakan masa depan. Aman, rahasia, tanpa menghakimi.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="id_ID">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌿</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: { sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'] },
+      colors: {
+        sage: { 50:'#f4f8f5', 100:'#e6efe9', 200:'#cfe0d5', 300:'#b0cbb9', 400:'#8fb09b', 500:'#7c9885', 600:'#617c6a', 700:'#4d6455', 800:'#3f5146', 900:'#34433a' },
+        teal: { 50:'#effaf8', 100:'#d3f2ed', 200:'#a8e5db', 300:'#74d0c4', 400:'#42b5a9', 500:'#2a9a90', 600:'#1f7c75', 700:'#1d635f' }
+      }
+    }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "VibeCheck BK - Ruang Aman Siswa",
+  "description": "Layanan Bimbingan dan Konseling sekolah: konseling individu dan kelompok, curhat anonim, karier, dan psikoedukasi.",
+  "employee": { "@type": "Person", "name": "Muhammad Afif Ahzabi Ainur Rohim, S.Pd.", "jobTitle": "Guru Bimbingan dan Konseling" }
+}
+</script>
+<style>
+  body { background:#fbfdfb; }
+  .reveal { opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease; }
+  .reveal.show { opacity:1; transform:none; }
+  .blob { position:absolute; border-radius:9999px; filter:blur(60px); opacity:.55; pointer-events:none; }
+  .tab-btn[aria-selected="true"] { background:#fff; color:#1f7c75; box-shadow:0 2px 10px rgba(52,67,58,.12); }
+  .acc-panel { max-height:0; overflow:hidden; transition:max-height .35s ease; }
+  .breath { transition: transform 4s ease-in-out; }
+  .breath.in { transform:scale(1.35); }
+  .breath.out { transform:scale(.8); transition-duration:6s; }
+  details > summary { list-style:none; }
+  details > summary::-webkit-details-marker { display:none; }
+  details[open] .chev { transform:rotate(180deg); }
+  .chev { transition:transform .25s; }
+  input:focus, select:focus, textarea:focus { outline:none; box-shadow:0 0 0 3px rgba(66,181,169,.3); border-color:#42b5a9; }
+  @media (prefers-reduced-motion: reduce) { * { animation:none !important; transition:none !important; } .reveal{opacity:1;transform:none;} }
+</style>
+</head>
+<body class="font-sans text-sage-900 antialiased">
+
+<a href="#beranda" class="sr-only focus:not-sr-only focus:absolute focus:z-[100] focus:bg-white focus:p-3 focus:rounded-lg">Lompat ke konten</a>
+
+<!-- NAVBAR -->
+<header class="sticky top-0 z-50 bg-white/85 backdrop-blur border-b border-sage-100">
+  <nav class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between" aria-label="Navigasi utama">
+    <a href="#beranda" class="flex items-center gap-2 font-extrabold text-lg text-sage-800">
+      <span class="w-9 h-9 rounded-xl bg-gradient-to-br from-sage-300 to-teal-400 grid place-items-center text-white text-xl">🌿</span>
+      <span>VibeCheck <span class="text-teal-600">BK</span></span>
+    </a>
+    <ul class="hidden lg:flex items-center gap-1 text-sm font-semibold" id="desktopMenu">
+      <li><a class="nav-link px-3 py-2 rounded-lg hover:bg-sage-100" href="#beranda">Beranda</a></li>
+      <li><a class="nav-link px-3 py-2 rounded-lg hover:bg-sage-100" href="#profil">Profil &amp; Jadwal</a></li>
+      <li><a class="nav-link px-3 py-2 rounded-lg hover:bg-sage-100" href="#layanan">Layanan</a></li>
+      <li><a class="nav-link px-3 py-2 rounded-lg hover:bg-sage-100" href="#psikoedukasi">Psikoedukasi</a></li>
+      <li><a class="nav-link px-3 py-2 rounded-lg hover:bg-sage-100" href="#privasi">Etika Privasi</a></li>
+    </ul>
+    <button id="menuBtn" class="lg:hidden w-11 h-11 grid place-items-center rounded-xl hover:bg-sage-100" aria-label="Buka menu" aria-expanded="false" aria-controls="mobileMenu">
+      <svg id="iconOpen" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg id="iconClose" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </nav>
+  <div id="mobileMenu" class="lg:hidden hidden border-t border-sage-100 bg-white">
+    <ul class="px-4 py-3 grid gap-1 text-base font-semibold">
+      <li><a class="block px-3 py-3 rounded-lg hover:bg-sage-100" href="#beranda">Beranda</a></li>
+      <li><a class="block px-3 py-3 rounded-lg hover:bg-sage-100" href="#profil">Profil &amp; Jadwal</a></li>
+      <li><a class="block px-3 py-3 rounded-lg hover:bg-sage-100" href="#layanan">Layanan</a></li>
+      <li><a class="block px-3 py-3 rounded-lg hover:bg-sage-100" href="#psikoedukasi">Psikoedukasi</a></li>
+      <li><a class="block px-3 py-3 rounded-lg hover:bg-sage-100" href="#privasi">Etika Privasi</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section id="beranda" class="relative overflow-hidden scroll-mt-16 bg-gradient-to-b from-sage-100 via-sage-50 to-white">
+  <div class="blob w-72 h-72 bg-teal-200 -top-16 -left-20"></div>
+  <div class="blob w-80 h-80 bg-sage-300 top-40 -right-24"></div>
+  <div class="relative max-w-6xl mx-auto px-4 pt-10 pb-14 md:pt-16 md:pb-20 grid lg:grid-cols-2 gap-10 items-center">
+    <div>
+      <p class="inline-flex items-center gap-2 bg-white/80 border border-sage-200 text-sage-700 text-xs font-bold px-3 py-1.5 rounded-full">
+        <span class="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></span> Ruang aman, tanpa menghakimi
+      </p>
+      <h1 class="mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight text-sage-900">
+        <span id="greeting">Halo</span>,<br>
+        <span class="text-teal-600">VibeCheck BK</span> siap mendengarkan.
+      </h1>
+      <p class="mt-4 text-base md:text-lg text-sage-700 max-w-xl">
+        Lagi capek, bingung, atau cuma butuh teman cerita? Di sini kamu boleh jujur dengan perasaanmu. Semua cerita dijaga, dan tidak ada yang terlalu kecil untuk dibicarakan.
+      </p>
+      <div class="mt-6 flex flex-col sm:flex-row gap-3">
+        <a href="#layanan" data-open-tab="konseling" class="cta-link inline-flex justify-center items-center gap-2 bg-teal-500 hover:bg-teal-600 text-white font-bold px-6 py-3.5 rounded-2xl shadow-lg shadow-teal-500/25 transition">📅 Booking Jadwal</a>
+        <a href="#layanan" data-open-tab="curhat" class="cta-link inline-flex justify-center items-center gap-2 bg-white hover:bg-sage-50 text-sage-800 font-bold px-6 py-3.5 rounded-2xl border border-sage-200 transition">💌 Kotak Curhat Anonim</a>
+      </div>
+
+      <!-- Hours -->
+      <div class="mt-8 bg-white rounded-2xl border border-sage-100 shadow-sm p-4 sm:p-5">
+        <div class="flex items-center justify-between gap-3">
+          <h2 class="font-bold text-sage-800">Jam Operasional BK</h2>
+          <span id="openStatus" class="text-xs font-bold px-3 py-1 rounded-full bg-sage-100 text-sage-700">Memeriksa...</span>
+        </div>
+        <dl class="mt-3 grid grid-cols-2 gap-x-4 gap-y-2 text-sm">
+          <dt class="text-sage-600">Senin – Kamis</dt><dd class="font-semibold text-right">07.00 – 15.00 WIB</dd>
+          <dt class="text-sage-600">Jumat</dt><dd class="font-semibold text-right">07.00 – 11.00 WIB</dd>
+          <dt class="text-sage-600">Sabtu – Minggu</dt><dd class="font-semibold text-right">Tutup (pesan tetap bisa dikirim)</dd>
+        </dl>
+      </div>
+    </div>
+
+    <!-- Quote card -->
+    <div class="relative">
+      <div class="bg-white rounded-3xl border border-sage-100 shadow-xl shadow-sage-500/10 p-6 sm:p-8">
+        <p class="text-xs font-bold uppercase tracking-widest text-teal-600">Kalimat penyemangat hari ini</p>
+        <blockquote class="mt-4">
+          <p id="quoteText" class="text-xl sm:text-2xl font-bold leading-snug text-sage-800 transition-opacity duration-300"></p>
+          <footer id="quoteAuthor" class="mt-3 text-sm text-sage-600 transition-opacity duration-300"></footer>
+        </blockquote>
+        <div class="mt-6 flex flex-wrap gap-2">
+          <button id="newQuote" class="px-4 py-2.5 rounded-xl bg-sage-100 hover:bg-sage-200 text-sage-800 text-sm font-bold transition">🔄 Quote lain</button>
+          <button id="copyQuote" class="px-4 py-2.5 rounded-xl bg-sage-100 hover:bg-sage-200 text-sage-800 text-sm font-bold transition">📋 Salin</button>
+        </div>
+        <hr class="my-6 border-sage-100">
+        <p class="text-sm font-bold text-sage-800">Hari ini perasaanmu gimana?</p>
+        <div class="mt-3 grid grid-cols-5 gap-2" id="moodRow">
+          <button data-mood="happy" class="mood-btn aspect-square rounded-2xl bg-sage-50 hover:bg-teal-100 text-2xl sm:text-3xl transition" aria-label="Senang">😊</button>
+          <button data-mood="calm" class="mood-btn aspect-square rounded-2xl bg-sage-50 hover:bg-teal-100 text-2xl sm:text-3xl transition" aria-label="Tenang">😌</button>
+          <button data-mood="tired" class="mood-btn aspect-square rounded-2xl bg-sage-50 hover:bg-teal-100 text-2xl sm:text-3xl transition" aria-label="Lelah">😴</button>
+          <button data-mood="anxious" class="mood-btn aspect-square rounded-2xl bg-sage-50 hover:bg-teal-100 text-2xl sm:text-3xl transition" aria-label="Cemas">😟</button>
+          <button data-mood="sad" class="mood-btn aspect-square rounded-2xl bg-sage-50 hover:bg-teal-100 text-2xl sm:text-3xl transition" aria-label="Sedih">😢</button>
+        </div>
+        <p id="moodReply" class="mt-4 text-sm text-sage-700 bg-teal-50 border border-teal-100 rounded-xl p-3 hidden"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROFIL & JADWAL -->
+<section id="profil" class="scroll-mt-16 py-14 md:py-20">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="reveal max-w-2xl">
+      <p class="text-teal-600 font-bold text-sm uppercase tracking-widest">Profil &amp; Jadwal</p>
+      <h2 class="mt-2 text-2xl md:text-4xl font-extrabold">Kenalan dulu dengan Guru BK-mu</h2>
+    </div>
+    <div class="mt-8 grid lg:grid-cols-5 gap-6">
+      <article class="reveal lg:col-span-2 bg-gradient-to-br from-sage-100 to-teal-50 rounded-3xl p-6 border border-sage-200">
+        <div class="flex items-center gap-4">
+          <div class="w-20 h-20 rounded-2xl bg-white grid place-items-center text-4xl shadow-sm shrink-0" aria-hidden="true">🧑‍🏫</div>
+          <div>
+            <h3 class="font-extrabold text-lg leading-snug">Muhammad Afif Ahzabi Ainur Rohim, S.Pd.</h3>
+            <p class="text-sm text-teal-700 font-semibold mt-1">Guru Bimbingan dan Konseling</p>
+          </div>
+        </div>
+        <p class="mt-5 text-sage-700 leading-relaxed">
+          Berlatar pendidikan Bimbingan dan Konseling, Pak Afif percaya bahwa setiap siswa punya cerita dan potensi yang layak didengar. Pendekatannya santai, hangat, dan tidak menggurui. Fokus layanannya mencakup masalah pribadi, belajar, pergaulan, serta perencanaan karier.
+        </p>
+        <ul class="mt-5 grid gap-2 text-sm">
+          <li class="flex gap-2"><span>✅</span> Mendengar dulu, menilai belakangan (atau tidak sama sekali)</li>
+          <li class="flex gap-2"><span>🔒</span> Menjaga kerahasiaan sesuai kode etik profesi</li>
+          <li class="flex gap-2"><span>🎯</span> Membantu kamu menemukan solusi versimu sendiri</li>
+        </ul>
+        <div class="mt-5 flex flex-wrap gap-2">
+          <span class="px-3 py-1 rounded-full bg-white text-xs font-bold text-sage-700">Konseling Individu</span>
+          <span class="px-3 py-1 rounded-full bg-white text-xs font-bold text-sage-700">Konseling Kelompok</span>
+          <span class="px-3 py-1 rounded-full bg-white text-xs font-bold text-sage-700">Bimbingan Karier</span>
+        </div>
+      </article>
+
+      <div class="reveal lg:col-span-3">
+        <div class="flex items-center justify-between gap-3">
+          <h3 class="font-extrabold text-lg">Jadwal Piket Konseling</h3>
+          <div class="inline-flex rounded-xl bg-sage-100 p-1 text-sm font-bold" role="group" aria-label="Filter jadwal">
+            <button class="sched-filter px-3 py-1.5 rounded-lg bg-white shadow-sm text-teal-700" data-f="all">Semua</button>
+            <button class="sched-filter px-3 py-1.5 rounded-lg text-sage-700" data-f="luring">Luring</button>
+            <button class="sched-filter px-3 py-1.5 rounded-lg text-sage-700" data-f="daring">Daring</button>
+          </div>
+        </div>
+        <div id="scheduleGrid" class="mt-4 grid sm:grid-cols-2 gap-3"></div>
+        <p class="mt-4 text-xs text-sage-600">Jadwal bisa berubah saat ada kegiatan sekolah. Cek pengumuman terbaru atau booking lewat formulir di bagian Layanan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LAYANAN -->
+<section id="layanan" class="scroll-mt-16 py-14 md:py-20 bg-sage-50">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="reveal text-center">
+      <p class="text-teal-600 font-bold text-sm uppercase tracking-widest">Layanan Utama</p>
+      <h2 class="mt-2 text-2xl md:text-4xl font-extrabold">Pilih cara yang paling nyaman buatmu</h2>
+    </div>
+
+    <div class="reveal mt-8 bg-sage-100 rounded-2xl p-1.5 grid grid-cols-3 gap-1" role="tablist" aria-label="Layanan">
+      <button role="tab" id="tab-konseling" aria-selected="true" aria-controls="panel-konseling" data-tab="konseling" class="tab-btn rounded-xl py-3 px-1 text-xs sm:text-sm font-bold text-sage-700 transition">🗓️<br class="sm:hidden"> <span class="sm:ml-1">Konseling</span></button>
+      <button role="tab" id="tab-curhat" aria-selected="false" aria-controls="panel-curhat" data-tab="curhat" class="tab-btn rounded-xl py-3 px-1 text-xs sm:text-sm font-bold text-sage-700 transition">💌<br class="sm:hidden"> <span class="sm:ml-1">Curhat Anonim</span></button>
+      <button role="tab" id="tab-karier" aria-selected="false" aria-controls="panel-karier" data-tab="karier" class="tab-btn rounded-xl py-3 px-1 text-xs sm:text-sm font-bold text-sage-700 transition">🎓<br class="sm:hidden"> <span class="sm:ml-1">Karier &amp; Studi</span></button>
+    </div>
+
+    <!-- Panel Konseling -->
+    <div id="panel-konseling" role="tabpanel" aria-labelledby="tab-konseling" class="mt-6 bg-white rounded-3xl border border-sage-100 shadow-sm p-5 sm:p-8">
+      <h3 class="text-xl font-extrabold">Daftar Sesi Konseling</h3>
+      <p class="mt-1 text-sage-600 text-sm">Isi singkat saja. Kamu tidak perlu menceritakan semuanya di sini, detailnya bisa dibahas saat sesi.</p>
+      <form id="formKonseling" class="mt-6 grid gap-4" novalidate>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label for="k-nama" class="block text-sm font-bold mb-1.5">Nama</label>
+            <input id="k-nama" type="text" required maxlength="60" placeholder="Nama lengkap / panggilan" class="w-full rounded-xl border border-sage-200 px-4 py-3 bg-sage-50/50">
+            <p class="err text-xs text-red-600 mt-1 hidden">Nama wajib diisi.</p>
+          </div>
+          <div>
+            <label for="k-kelas" class="block text-sm font-bold mb-1.5">Kelas</label>
+            <input id="k-kelas" type="text" required maxlength="20" placeholder="Contoh: XI IPA 2" class="w-full rounded-xl border border-sage-200 px-4 py-3 bg-sage-50/50">
+            <p class="err text-xs text-red-600 mt-1 hidden">Kelas wajib diisi.</p>
+          </div>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label for="k-layanan" class="block text-sm font-bold mb-1.5">Pilih Layanan</label>
+            <select id="k-layanan" required class="w-full rounded-xl border border-sage-200 px-4 py-3 bg-sage-50/50">
+              <option value="">-- Pilih --</option>
+              <option>Konseling Individu (Luring)</option>
+              <option>Konseling Individu (Daring)</option>
+              <option>Konseling Kelompok</option>
+              <option>Konsultasi Karier &amp; Studi Lanjut</option>
+            </select>
+            <p class="err text-xs text-red-600 mt-1 hidden">Pilih salah satu layanan.</p>
+          </div>
+          <div>
+            <label for="k-topik" class="block text-sm font-bold mb-1.5">Topik</label>
+            <select id="k-topik" required class="w-full rounded-xl border border-sage-200 px-4 py-3 bg-sage-50/50">
+              <option value="">-- Pilih --</option>
+              <option>Pribadi &amp; emosi</option>
+              <option>Belajar &amp; motivasi</option>
+              <option>Pertemanan &amp; keluarga</option>
+              <option>Bullying / merasa tidak aman</option>
+              <option>Karier &amp; studi lanjut</option>
+              <option>Lainnya</option>
+            </select>
+            <p class="err text-xs text-red-600 mt-1 hidden">Pilih topik.</p>
+          </div>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label for="k-tanggal" class="block text-sm font-bold mb-1.5">Tanggal</label>
+            <input id="k-tanggal" type="date" required class="w-full rounded-xl border border-sage-200 px-4 py-3 bg-sage-50/50">
+            <p class="err text-xs text-red-600 mt-1 hidden">Pilih hari kerja (Senin–Jumat) dari hari ini ke depan.</p>
+          </div>
+          <div>
+            <label for="k-jam" class="block text-sm font-bold mb-1.5">Jam</label>
+            <select id="k-jam" required class="w-full rounded-xl border border-sage-200 px-4 py-3 bg-sage-50/50">
+              <option value="">-- Pilih --</option>
+              <option>08.00</option><option>09.00</option><option>10.00</option><option>11.00</option>
+              <option>12.30</option><option>13.30</option><option>14.30</option>
+            </select>
+            <p class="err text-xs text-red-600 mt-1 hidden">Pilih jam.</p>
+          </div>
+        </div>
+        <div>
+          <label for="k-catatan" class="block text-sm font-bold mb-1.5">Catatan singkat <span class="font-normal text-sage-500">(opsional)</span></label>
+          <textarea id="k-catatan" rows="3" maxlength="300" placeholder="Ada hal yang ingin Pak Afif tahu sebelum sesi?" class="w-full rounded-xl border border-sage-200 px-4 py-3 bg-sage-50/50"></textarea>
+        </div>
+        <label class="flex items-start gap-3 text-sm text-sage-700">
+          <input id="k-setuju" type="checkbox" class="mt-1 w-5 h-5 accent-teal-500">
+          <span>Saya paham isi sesi bersifat rahasia, dengan pengecualian bila ada risiko keselamatan diri atau orang lain.</span>
+        </label>
+        <p id="k-setujuErr" class="err text-xs text-red-600 -mt-2 hidden">Centang persetujuan dulu ya.</p>
+        <button type="submit" class="bg-teal-500 hover:bg-teal-600 text-white font-bold py-3.5 rounded-2xl transition shadow-lg shadow-teal-500/20">Kirim Pendaftaran</button>
+      </form>
+
+      <div id="riwayatBox" class="mt-8 hidden">
+        <h4 class="font-bold text-sm text-sage-800">Pendaftaran terakhir di perangkat ini</h4>
+        <ul id="riwayatList" class="mt-2 grid gap-2 text-sm"></ul>
+      </div>
+    </div>
+
+    <!-- Panel Curhat -->
+    <div id="panel-curhat" role="tabpanel" aria-labelledby="tab-curhat" class="hidden mt-6 bg-white rounded-3xl border border-sage-100 shadow-sm p-5 sm:p-8">
+      <h3 class="text-xl font-extrabold">Kotak Curhat &amp; Tanya Jawab Anonim</h3>
+      <p class="mt-1 text-sage-600 text-sm">Tidak perlu nama atau kelas. Setelah kirim, kamu mendapat <strong>kode tiket</strong> untuk melihat status dan balasan nanti.</p>
+      <form id="formCurhat" class="mt-6 grid gap-4" novalidate>
+        <div>
+          <label for="c-kategori" class="block text-sm font-bold mb-1.5">Kategori</label>
+          <select id="c-kategori" class="w-full rounded-xl border border-sage-200 px-4 py-3 bg-sage-50/50">
+            <option>Curhat bebas</option>
+            <option>Tanya jawab</option>
+            <option>Masalah belajar</option>
+            <option>Pertemanan / keluarga</option>
+            <option>Bullying</option>
+            <option>Perasaan cemas / sedih</option>
+          </select>
+        </div>
+        <div>
+          <label for="c-pesan" class="block text-sm font-bold mb-1.5">Pesanmu</label>
+          <textarea id="c-pesan" rows="6" maxlength="1000" required placeholder="Tulis apa saja. Di sini aman." class="w-full rounded-xl border border-sage-200 px-4 py-3 bg-sage-50/50"></textarea>
+          <div class="flex justify-between mt-1">
+            <p id="c-err" class="text-xs text-red-600 hidden">Tulis minimal 10 karakter ya.</p>
+            <p class="text-xs text-sage-500 ml-auto"><span id="c-count">0</span>/1000</p>
+          </div>
+        </div>
+        <button type="submit" class="bg-sage-600 hover:bg-sage-700 text-white font-bold py-3.5 rounded-2xl transition">Kirim Secara Anonim</button>
+      </form>
+
+      <div class="mt-8 rounded-2xl bg-sage-50 border border-sage-100 p-4">
+        <h4 class="font-bold">Cek tiketmu</h4>
+        <form id="formTiket" class="mt-3 flex flex-col sm:flex-row gap-2">
+          <input id="t-kode" type="text" placeholder="Contoh: VC-7K2M9Q" class="flex-1 rounded-xl border border-sage-200 px-4 py-3 uppercase bg-white" aria-label="Kode tiket">
+          <button class="bg-teal-500 hover:bg-teal-600 text-white font-bold px-5 py-3 rounded-xl transition">Cek Status</button>
+        </form>
+        <div id="tiketHasil" class="mt-3 text-sm hidden"></div>
+      </div>
+    </div>
+
+    <!-- Panel Karier -->
+    <div id="panel-karier" role="tabpanel" aria-labelledby="tab-karier" class="hidden mt-6 bg-white rounded-3xl border border-sage-100 shadow-sm p-5 sm:p-8">
+      <h3 class="text-xl font-extrabold">Portal Karier &amp; Studi Lanjut</h3>
+      <p class="mt-1 text-sage-600 text-sm">Gambaran umum jalur setelah SMA/SMK. Syarat dan jadwal resmi bisa berubah tiap tahun, jadi selalu cek pengumuman dari penyelenggara.</p>
+      <div class="mt-6 grid gap-3" id="karierList"></div>
+
+      <div class="mt-8 rounded-2xl bg-teal-50 border border-teal-100 p-5">
+        <h4 class="font-bold text-teal-700">Mini cek minat (30 detik)</h4>
+        <p class="text-sm text-sage-700 mt-1">Pilih aktivitas yang paling kamu suka:</p>
+        <div class="mt-3 grid grid-cols-2 gap-2" id="minatBtns">
+          <button data-m="sosial" class="minat rounded-xl bg-white border border-teal-100 hover:border-teal-400 px-3 py-3 text-sm font-semibold transition">🤝 Membantu orang</button>
+          <button data-m="teknis" class="minat rounded-xl bg-white border border-teal-100 hover:border-teal-400 px-3 py-3 text-sm font-semibold transition">🔧 Membuat &amp; memperbaiki</button>
+          <button data-m="analitis" class="minat rounded-xl bg-white border border-teal-100 hover:border-teal-400 px-3 py-3 text-sm font-semibold transition">🔍 Menganalisis data</button>
+          <button data-m="kreatif" class="minat rounded-xl bg-white border border-teal-100 hover:border-teal-400 px-3 py-3 text-sm font-semibold transition">🎨 Berkarya &amp; berkreasi</button>
+        </div>
+        <p id="minatHasil" class="mt-3 text-sm text-sage-800 hidden"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PSIKOEDUKASI -->
+<section id="psikoedukasi" class="scroll-mt-16 py-14 md:py-20">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="reveal max-w-2xl">
+      <p class="text-teal-600 font-bold text-sm uppercase tracking-widest">Sudut Psikoedukasi</p>
+      <h2 class="mt-2 text-2xl md:text-4xl font-extrabold">Belajar merawat diri, pelan-pelan</h2>
+      <p class="mt-2 text-sage-700">Bacaan singkat dan latihan praktis. Bukan pengganti konseling, tapi bisa jadi titik awal.</p>
+    </div>
+
+    <div id="artFilters" class="mt-6 flex gap-2 overflow-x-auto pb-2 -mx-4 px-4" role="group" aria-label="Filter artikel"></div>
+    <div id="artGrid" class="mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+
+    <!-- Breathing -->
+    <div class="reveal mt-10 rounded-3xl bg-gradient-to-br from-teal-50 to-sage-100 border border-sage-200 p-6 sm:p-8 grid md:grid-cols-2 gap-6 items-center">
+      <div>
+        <h3 class="text-xl font-extrabold">Latihan napas 4-6</h3>
+        <p class="mt-2 text-sage-700 text-sm leading-relaxed">Tarik napas lewat hidung selama 4 hitungan, lalu hembuskan pelan lewat mulut selama 6 hitungan. Ulangi beberapa kali. Cocok dipakai sebelum ujian atau presentasi.</p>
+        <button id="breathBtn" class="mt-4 bg-teal-500 hover:bg-teal-600 text-white font-bold px-5 py-3 rounded-2xl transition">Mulai Latihan</button>
+      </div>
+      <div class="grid place-items-center h-52">
+        <div id="breathCircle" class="breath w-32 h-32 rounded-full bg-gradient-to-br from-teal-300 to-sage-300 grid place-items-center text-sage-900 font-bold text-center text-sm shadow-lg">
+          <span id="breathText">Siap?</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRIVASI -->
+<section id="privasi" class="scroll-mt-16 py-14 md:py-20 bg-sage-50">
+  <div class="max-w-4xl mx-auto px-4">
+    <div class="reveal text-center">
+      <p class="text-teal-600 font-bold text-sm uppercase tracking-widest">Kebijakan Privasi &amp; Etika</p>
+      <h2 class="mt-2 text-2xl md:text-4xl font-extrabold">Ceritamu dijaga, itu janji kami</h2>
+      <p class="mt-3 text-sage-700">Layanan ini berpedoman pada Kode Etik Profesi Konselor yang ditetapkan ABKIN (Asosiasi Bimbingan dan Konseling Indonesia).</p>
+    </div>
+
+    <div class="reveal mt-8 grid gap-3">
+      <details class="group bg-white rounded-2xl border border-sage-100 p-5" open>
+        <summary class="flex justify-between items-center cursor-pointer font-bold">🔒 Kerahasiaan <svg class="chev w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <p class="mt-3 text-sm text-sage-700 leading-relaxed">Isi percakapan konseling, formulir, dan pesan curhat tidak dibagikan kepada guru lain, teman, maupun orang tua tanpa persetujuanmu. Catatan konseling disimpan terpisah dan hanya diakses oleh Guru BK.</p>
+      </details>
+      <details class="group bg-white rounded-2xl border border-sage-100 p-5">
+        <summary class="flex justify-between items-center cursor-pointer font-bold">⚖️ Batas kerahasiaan <svg class="chev w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <p class="mt-3 text-sm text-sage-700 leading-relaxed">Kerahasiaan dapat dikecualikan hanya bila ada bahaya serius bagi keselamatan dirimu atau orang lain, misalnya ancaman melukai diri, kekerasan, atau pelecehan. Dalam kondisi itu, Guru BK akan berusaha lebih dulu memberi tahu kamu, lalu melibatkan pihak yang tepat demi keselamatanmu.</p>
+      </details>
+      <details class="group bg-white rounded-2xl border border-sage-100 p-5">
+        <summary class="flex justify-between items-center cursor-pointer font-bold">🗂️ Data yang kami simpan <svg class="chev w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <p class="mt-3 text-sm text-sage-700 leading-relaxed">Formulir konseling hanya meminta data seperlunya: nama, kelas, layanan, topik, dan jadwal. Kotak curhat anonim tidak meminta identitas apa pun dan tidak dikirim lewat WhatsApp maupun email. Pendaftaran konseling hanya sampai ke Guru BK bila kamu sendiri menekan tombol kirim lewat WhatsApp atau email. Riwayat singkat dan kode tiket tersimpan di browser perangkatmu.</p>
+      </details>
+      <details class="group bg-white rounded-2xl border border-sage-100 p-5">
+        <summary class="flex justify-between items-center cursor-pointer font-bold">🙋 Hakmu sebagai siswa <svg class="chev w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <ul class="mt-3 text-sm text-sage-700 leading-relaxed list-disc pl-5 grid gap-1">
+          <li>Datang atas kemauan sendiri (sukarela) dan boleh berhenti kapan saja.</li>
+          <li>Diperlakukan dengan hormat, tanpa dihakimi atau dibanding-bandingkan.</li>
+          <li>Mengetahui bagaimana data dan ceritamu digunakan.</li>
+          <li>Meminta data konselingmu dihapus dengan menghubungi Guru BK.</li>
+        </ul>
+      </details>
+      <details class="group bg-white rounded-2xl border border-sage-100 p-5">
+        <summary class="flex justify-between items-center cursor-pointer font-bold">🆘 Butuh bantuan segera? <svg class="chev w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <p class="mt-3 text-sm text-sage-700 leading-relaxed">Jika kamu atau temanmu dalam bahaya sekarang, jangan menunggu balasan situs ini. Hubungi orang dewasa yang kamu percaya, layanan darurat 112, atau layanan kesehatan jiwa Kemenkes di 119 (tekan 8).</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-sage-800 text-sage-100">
+  <div class="max-w-6xl mx-auto px-4 py-10 grid md:grid-cols-3 gap-8 text-sm">
+    <div>
+      <p class="font-extrabold text-lg text-white">VibeCheck <span class="text-teal-300">BK</span></p>
+      <p class="mt-2 text-sage-200">Ruang Aman Siswa. Tempat cerita, belajar, dan bertumbuh.</p>
+    </div>
+    <div>
+      <p class="font-bold text-white">Konselor</p>
+      <p class="mt-2">Muhammad Afif Ahzabi Ainur Rohim, S.Pd.</p>
+      <p class="text-sage-300">Guru Bimbingan dan Konseling</p>
+    </div>
+    <div>
+      <p class="font-bold text-white">Butuh bantuan darurat?</p>
+      <p class="mt-2">Hubungi 112 atau layanan kesehatan jiwa Kemenkes di 119 (tekan 8).</p>
+    </div>
+  </div>
+  <div class="border-t border-sage-700 py-4 text-center text-xs text-sage-300">© <span id="year"></span> VibeCheck BK. Dibuat dengan 💚 untuk siswa.</div>
+</footer>
+
+<button id="toTop" class="fixed bottom-5 right-5 z-40 w-12 h-12 rounded-full bg-teal-500 text-white shadow-lg hidden" aria-label="Kembali ke atas">↑</button>
+
+<!-- MODAL -->
+<div id="modal" class="fixed inset-0 z-[90] hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div id="modalBackdrop" class="absolute inset-0 bg-sage-900/50 backdrop-blur-sm"></div>
+  <div class="absolute inset-x-0 bottom-0 sm:inset-0 sm:grid sm:place-items-center pointer-events-none">
+    <div class="pointer-events-auto bg-white w-full sm:max-w-lg max-h-[90vh] overflow-y-auto rounded-t-3xl sm:rounded-3xl p-6 sm:p-8 shadow-2xl">
+      <div class="flex items-start justify-between gap-4">
+        <h3 id="modalTitle" class="text-xl font-extrabold leading-snug"></h3>
+        <button id="modalClose" class="w-10 h-10 shrink-0 rounded-full bg-sage-100 hover:bg-sage-200" aria-label="Tutup">✕</button>
+      </div>
+      <div id="modalBody" class="mt-4 text-sm text-sage-700 leading-relaxed"></div>
+      <div id="modalFoot" class="mt-6"></div>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div id="toast" class="fixed left-1/2 -translate-x-1/2 bottom-6 z-[95] bg-sage-900 text-white text-sm font-semibold px-5 py-3 rounded-full shadow-xl opacity-0 pointer-events-none transition-opacity"></div>
+
+<script>
+(() => {
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  /* ===== KONTAK PENDAFTARAN: ganti dua nilai ini ===== */
+  const CONTACT = {
+    wa: '6285728371151',                // nomor WhatsApp format internasional, tanpa + dan tanpa 0 di depan (contoh: 6281234567890)
+    email: 'afifahzabii@gmail.com'  // alamat email penerima pendaftaran
+  };
+  const store = {
+    get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } },
+    set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} }
+  };
+
+  /* ---------- Toast & Modal ---------- */
+  let toastTimer;
+  function toast(msg) {
+    const t = $('#toast'); t.textContent = msg; t.style.opacity = 1;
+    clearTimeout(toastTimer); toastTimer = setTimeout(() => t.style.opacity = 0, 2400);
+  }
+  let lastFocus = null;
+  function openModal(title, bodyHTML, footHTML = '') {
+    lastFocus = document.activeElement;
+    $('#modalTitle').textContent = title;
+    $('#modalBody').innerHTML = bodyHTML;
+    $('#modalFoot').innerHTML = footHTML;
+    $('#modal').classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    $('#modalClose').focus();
+  }
+  function closeModal() {
+    $('#modal').classList.add('hidden');
+    document.body.style.overflow = '';
+    if (lastFocus) lastFocus.focus();
+  }
+  $('#modalClose').onclick = closeModal;
+  $('#modalBackdrop').onclick = closeModal;
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  /* ---------- Navbar ---------- */
+  const menuBtn = $('#menuBtn'), mobileMenu = $('#mobileMenu');
+  function setMenu(open) {
+    mobileMenu.classList.toggle('hidden', !open);
+    $('#iconOpen').classList.toggle('hidden', open);
+    $('#iconClose').classList.toggle('hidden', !open);
+    menuBtn.setAttribute('aria-expanded', open);
+  }
+  menuBtn.onclick = () => setMenu(mobileMenu.classList.contains('hidden'));
+  $$('#mobileMenu a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+
+  const sections = $$('main section[id]');
+  const navLinks = $$('.nav-link');
+  const spy = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (en.isIntersecting) {
+        navLinks.forEach(l => {
+          const on = l.getAttribute('href') === '#' + en.target.id;
+          l.classList.toggle('bg-sage-100', on);
+          l.classList.toggle('text-teal-700', on);
+        });
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  sections.forEach(s => spy.observe(s));
+
+  const toTop = $('#toTop');
+  window.addEventListener('scroll', () => toTop.classList.toggle('hidden', window.scrollY < 600), { passive: true });
+  toTop.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  const rev = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('show'); rev.unobserve(e.target); } }), { threshold: .08 });
+  $$('.reveal').forEach(el => rev.observe(el));
+  $('#year').textContent = new Date().getFullYear();
+
+  /* ---------- Greeting & status ---------- */
+  const now = new Date(), h = now.getHours();
+  $('#greeting').textContent = h < 11 ? 'Selamat pagi' : h < 15 ? 'Selamat siang' : h < 18 ? 'Selamat sore' : 'Selamat malam';
+
+  function updateStatus() {
+    const d = new Date(), day = d.getDay(), mins = d.getHours() * 60 + d.getMinutes();
+    let open = false;
+    if (day >= 1 && day <= 4) open = mins >= 420 && mins < 900;
+    if (day === 5) open = mins >= 420 && mins < 660;
+    const el = $('#openStatus');
+    el.textContent = open ? '● Buka sekarang' : '○ Sedang tutup';
+    el.className = 'text-xs font-bold px-3 py-1 rounded-full ' + (open ? 'bg-teal-100 text-teal-700' : 'bg-sage-100 text-sage-700');
+  }
+  updateStatus(); setInterval(updateStatus, 60000);
+
+  /* ---------- Quotes ---------- */
+  const quotes = [
+    ['Tidak apa-apa untuk tidak baik-baik saja. Yang penting kamu tidak menghadapinya sendirian.', 'VibeCheck BK'],
+    ['Progres kecil tetaplah progres. Hari ini cukup lakukan satu hal yang bisa kamu lakukan.', 'VibeCheck BK'],
+    ['Nilai bukan satu-satunya ukuran kamu berharga.', 'VibeCheck BK'],
+    ['Istirahat itu bagian dari proses belajar, bukan tanda menyerah.', 'VibeCheck BK'],
+    ['Bercerita pada orang yang tepat bisa membuat beban terasa lebih ringan.', 'VibeCheck BK'],
+    ['Kamu tidak harus sempurna untuk layak didukung.', 'VibeCheck BK'],
+    ['Merasa cemas itu manusiawi. Belajar menenangkannya adalah keterampilan yang bisa dilatih.', 'VibeCheck BK'],
+    ['Masa depanmu tidak ditentukan oleh satu ujian, satu jurusan, atau satu hari yang buruk.', 'VibeCheck BK'],
+    ['Setiap orang tumbuh dengan kecepatannya sendiri. Jangan buru-buru membandingkan.', 'VibeCheck BK']
+  ];
+  const dayIdx = Math.floor(Date.now() / 86400000) % quotes.length;
+  let qi = dayIdx;
+  function showQuote(i, animate) {
+    const t = $('#quoteText'), a = $('#quoteAuthor');
+    const set = () => { t.textContent = '“' + quotes[i][0] + '”'; a.textContent = '— ' + quotes[i][1]; t.style.opacity = a.style.opacity = 1; };
+    if (!animate) return set();
+    t.style.opacity = a.style.opacity = 0; setTimeout(set, 250);
+  }
+  showQuote(qi, false);
+  $('#newQuote').onclick = () => { qi = (qi + 1) % quotes.length; showQuote(qi, true); };
+  $('#copyQuote').onclick = async () => {
+    try { await navigator.clipboard.writeText(quotes[qi][0]); toast('Quote disalin'); } catch { toast('Tidak bisa menyalin di browser ini'); }
+  };
+
+  /* ---------- Mood ---------- */
+  const moodMsg = {
+    happy: 'Senang mendengarnya! Simpan perasaan ini, dan bagikan energinya ke teman yang sedang butuh.',
+    calm: 'Bagus, tenang itu modal berharga. Pakai untuk fokus pada satu hal yang kamu pedulikan hari ini.',
+    tired: 'Tubuh dan pikiranmu mungkin minta jeda. Coba minum air, regangkan badan 2 menit, dan tidur cukup malam ini.',
+    anxious: 'Terima kasih sudah jujur. Coba latihan napas 4-6 di bagian Psikoedukasi, lalu tulis satu hal yang paling kamu khawatirkan. Kalau terasa berat, kamu bisa booking sesi.',
+    sad: 'Aku turut merasakan itu. Kamu tidak harus kuat sendirian. Kalau mau, tulis di Kotak Curhat atau booking sesi dengan Pak Afif.'
+  };
+  $$('.mood-btn').forEach(b => b.onclick = () => {
+    $$('.mood-btn').forEach(x => x.classList.remove('bg-teal-100', 'ring-2', 'ring-teal-400'));
+    b.classList.add('bg-teal-100', 'ring-2', 'ring-teal-400');
+    const r = $('#moodReply'); r.textContent = moodMsg[b.dataset.mood]; r.classList.remove('hidden');
+  });
+
+  /* ---------- Jadwal ---------- */
+  const jadwal = [
+    { hari: 'Senin', day: 1, tipe: 'luring', jam: '09.30 – 12.00', tempat: 'Ruang BK (lantai 1)' },
+    { hari: 'Selasa', day: 2, tipe: 'daring', jam: '13.00 – 15.00', tempat: 'Google Meet / chat terjadwal' },
+    { hari: 'Rabu', day: 3, tipe: 'luring', jam: '08.00 – 11.00', tempat: 'Ruang BK (lantai 1)' },
+    { hari: 'Kamis', day: 4, tipe: 'daring', jam: '13.00 – 15.00', tempat: 'Google Meet / chat terjadwal' },
+    { hari: 'Jumat', day: 5, tipe: 'luring', jam: '07.30 – 10.30', tempat: 'Ruang BK (lantai 1)' }
+  ];
+  function renderJadwal(f = 'all') {
+    const today = new Date().getDay();
+    $('#scheduleGrid').innerHTML = jadwal.filter(j => f === 'all' || j.tipe === f).map(j => `
+      <div class="rounded-2xl p-4 border ${j.day === today ? 'border-teal-400 bg-teal-50' : 'border-sage-100 bg-white'}">
+        <div class="flex items-center justify-between">
+          <p class="font-extrabold">${j.hari}${j.day === today ? ' <span class="text-xs font-bold text-teal-600">· hari ini</span>' : ''}</p>
+          <span class="text-xs font-bold px-2.5 py-1 rounded-full ${j.tipe === 'luring' ? 'bg-sage-100 text-sage-700' : 'bg-teal-100 text-teal-700'}">${j.tipe === 'luring' ? '🏫 Luring' : '💻 Daring'}</span>
+        </div>
+        <p class="mt-2 text-sm font-semibold">${j.jam} WIB</p>
+        <p class="text-sm text-sage-600">${j.tempat}</p>
+      </div>`).join('');
+  }
+  renderJadwal();
+  $$('.sched-filter').forEach(b => b.onclick = () => {
+    $$('.sched-filter').forEach(x => { x.classList.remove('bg-white', 'shadow-sm', 'text-teal-700'); x.classList.add('text-sage-700'); });
+    b.classList.add('bg-white', 'shadow-sm', 'text-teal-700'); b.classList.remove('text-sage-700');
+    renderJadwal(b.dataset.f);
+  });
+
+  /* ---------- Tabs ---------- */
+  function openTab(name) {
+    $$('.tab-btn').forEach(b => b.setAttribute('aria-selected', b.dataset.tab === name));
+    ['konseling', 'curhat', 'karier'].forEach(n => $('#panel-' + n).classList.toggle('hidden', n !== name));
+  }
+  $$('.tab-btn').forEach(b => b.onclick = () => openTab(b.dataset.tab));
+  $$('[data-open-tab]').forEach(a => a.addEventListener('click', () => openTab(a.dataset.openTab)));
+  $('#tab-konseling').parentElement.addEventListener('keydown', e => {
+    const tabs = $$('.tab-btn'); const i = tabs.findIndex(t => t.getAttribute('aria-selected') === 'true');
+    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+      const n = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
+      openTab(n.dataset.tab); n.focus();
+    }
+  });
+
+  /* ---------- Form Konseling ---------- */
+  const tgl = $('#k-tanggal');
+  const pad = n => String(n).padStart(2, '0');
+  const todayStr = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
+  tgl.min = todayStr;
+
+  function showErr(input, bad) {
+    const err = input.parentElement.querySelector('.err');
+    if (err) err.classList.toggle('hidden', !bad);
+    input.classList.toggle('border-red-400', bad);
+    return bad;
+  }
+  function renderRiwayat() {
+    const list = store.get('vcbk_booking', []);
+    $('#riwayatBox').classList.toggle('hidden', !list.length);
+    $('#riwayatList').innerHTML = list.slice(-3).reverse().map(b => `
+      <li class="rounded-xl bg-sage-50 border border-sage-100 p-3 flex justify-between gap-3">
+        <span><strong>${esc(b.kode)}</strong> · ${esc(b.layanan)}</span><span class="text-sage-600 shrink-0">${esc(b.tglLabel)}, ${esc(b.jam)}</span>
+      </li>`).join('');
+  }
+  renderRiwayat();
+
+  $('#formKonseling').addEventListener('submit', e => {
+    e.preventDefault();
+    const f = {
+      nama: $('#k-nama'), kelas: $('#k-kelas'), layanan: $('#k-layanan'), topik: $('#k-topik'), tgl: $('#k-tanggal'), jam: $('#k-jam')
+    };
+    let bad = false;
+    ['nama', 'kelas', 'layanan', 'topik', 'jam'].forEach(k => { bad = showErr(f[k], !f[k].value.trim()) || bad; });
+    let dateBad = !f.tgl.value || f.tgl.value < todayStr;
+    if (!dateBad) { const dw = new Date(f.tgl.value + 'T00:00:00').getDay(); dateBad = dw === 0 || dw === 6; }
+    bad = showErr(f.tgl, dateBad) || bad;
+    const ok = $('#k-setuju').checked;
+    $('#k-setujuErr').classList.toggle('hidden', ok);
+    if (bad || !ok) { toast('Ada isian yang perlu dilengkapi'); return; }
+
+    const d = new Date(f.tgl.value + 'T00:00:00');
+    const tglLabel = d.toLocaleDateString('id-ID', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+    const kode = 'BK-' + pad(d.getFullYear() % 100) + pad(d.getMonth() + 1) + pad(d.getDate()) + '-' + Math.random().toString(36).slice(2, 6).toUpperCase();
+    const data = { kode, nama: f.nama.value.trim(), kelas: f.kelas.value.trim(), layanan: f.layanan.value, topik: f.topik.value, tglLabel, jam: f.jam.value };
+    const list = store.get('vcbk_booking', []); list.push(data); store.set('vcbk_booking', list);
+    renderRiwayat();
+    const catatan = $('#k-catatan').value.trim();
+    const pesanKirim = 'Halo Pak Afif, saya mau mendaftar konseling lewat VibeCheck BK.\n\n' +
+      'Kode: ' + data.kode + '\nNama: ' + data.nama + '\nKelas: ' + data.kelas +
+      '\nLayanan: ' + data.layanan + '\nTopik: ' + data.topik +
+      '\nJadwal: ' + data.tglLabel + ', ' + data.jam + ' WIB' +
+      (catatan ? '\nCatatan: ' + catatan : '') + '\n\nTerima kasih.';
+    const waUrl = 'https://wa.me/' + CONTACT.wa + '?text=' + encodeURIComponent(pesanKirim);
+    const mailUrl = 'mailto:' + CONTACT.email + '?subject=' + encodeURIComponent('Pendaftaran Konseling ' + data.kode) + '&body=' + encodeURIComponent(pesanKirim);
+    openModal('Pendaftaran tercatat 🎉', `
+      <p>Terima kasih, <strong>${esc(data.nama)}</strong> (${esc(data.kelas)}). Permintaanmu sudah tercatat.</p>
+      <dl class="mt-4 grid grid-cols-3 gap-y-2 bg-sage-50 rounded-2xl p-4 border border-sage-100">
+        <dt class="text-sage-600">Kode</dt><dd class="col-span-2 font-bold">${esc(data.kode)}</dd>
+        <dt class="text-sage-600">Layanan</dt><dd class="col-span-2 font-semibold">${esc(data.layanan)}</dd>
+        <dt class="text-sage-600">Topik</dt><dd class="col-span-2 font-semibold">${esc(data.topik)}</dd>
+        <dt class="text-sage-600">Jadwal</dt><dd class="col-span-2 font-semibold">${esc(data.tglLabel)}, ${esc(data.jam)} WIB</dd>
+      </dl>
+      <p class="mt-4">Satu langkah lagi: kirim detail ini ke Guru BK lewat WhatsApp atau email supaya jadwalmu bisa dikonfirmasi. Simpan juga kodenya.</p>`,
+      `<div class="grid gap-2">
+        <a data-kind="wa" href="${esc(waUrl)}" target="_blank" rel="noopener" class="send-link text-center bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 rounded-2xl">💬 Kirim lewat WhatsApp</a>
+        <a data-kind="mail" href="${esc(mailUrl)}" class="send-link text-center bg-sage-600 hover:bg-sage-700 text-white font-bold py-3 rounded-2xl">✉️ Kirim lewat Email</a>
+        <button class="bg-sage-100 hover:bg-sage-200 font-bold py-3 rounded-2xl" onclick="document.getElementById('modalClose').click()">Nanti saja</button>
+      </div>`);
+    $$('#modalFoot .send-link').forEach(a => a.addEventListener('click', ev => {
+      const bad = a.dataset.kind === 'wa' ? /\D/.test(CONTACT.wa) : (CONTACT.email.includes('ISI_') || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(CONTACT.email));
+      if (bad) { ev.preventDefault(); toast(a.dataset.kind === 'wa' ? 'Nomor WhatsApp belum diisi di kode' : 'Alamat email belum diisi di kode'); }
+    }));
+    e.target.reset();
+  });
+
+  /* ---------- Curhat Anonim ---------- */
+  const pesan = $('#c-pesan');
+  pesan.addEventListener('input', () => $('#c-count').textContent = pesan.value.length);
+  const genTiket = () => {
+    const ch = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'; let s = '';
+    const arr = new Uint32Array(6); (crypto || window.msCrypto).getRandomValues(arr);
+    arr.forEach(n => s += ch[n % ch.length]); return 'VC-' + s;
+  };
+  const risky = /(bunuh diri|mengakhiri hidup|ingin mati|pengen mati|nyakitin diri|melukai diri|self.?harm)/i;
+
+  $('#formCurhat').addEventListener('submit', e => {
+    e.preventDefault();
+    const txt = pesan.value.trim();
+    const bad = txt.length < 10;
+    $('#c-err').classList.toggle('hidden', !bad);
+    if (bad) return;
+    const kode = genTiket();
+    const list = store.get('vcbk_tiket', []);
+    list.push({ kode, kategori: $('#c-kategori').value, waktu: Date.now(), status: 'Diterima' });
+    store.set('vcbk_tiket', list);
+    const crisis = risky.test(txt) ? `
+      <div class="mt-4 rounded-2xl bg-red-50 border border-red-200 p-4 text-red-800">
+        <p class="font-bold">Kami peduli dengan keselamatanmu.</p>
+        <p class="mt-1">Kalau kamu sedang berpikir menyakiti diri, tolong hubungi orang dewasa yang kamu percaya sekarang, atau layanan darurat 112 / layanan kesehatan jiwa Kemenkes 119 (tekan 8). Kamu juga bisa datang langsung ke Ruang BK.</p>
+      </div>` : '';
+    openModal('Pesanmu sudah terkirim 💌', `
+      <p>Terima kasih sudah berani bercerita. Pesan ini <strong>tanpa identitas</strong>.</p>
+      <div class="mt-4 rounded-2xl bg-teal-50 border border-teal-100 p-5 text-center">
+        <p class="text-xs font-bold uppercase tracking-widest text-teal-600">Kode tiketmu</p>
+        <p id="tiketKode" class="mt-1 text-3xl font-extrabold tracking-wider text-sage-900">${kode}</p>
+      </div>
+      <p class="mt-4">Catat atau salin kodenya. Tanpa kode ini, balasan tidak bisa dicari karena kami memang tidak tahu siapa kamu. Balasan biasanya tersedia dalam 2×24 jam hari kerja.</p>${crisis}`,
+      `<div class="grid grid-cols-2 gap-2">
+        <button id="copyTiket" class="bg-sage-100 hover:bg-sage-200 font-bold py-3 rounded-2xl">Salin kode</button>
+        <button class="bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 rounded-2xl" onclick="document.getElementById('modalClose').click()">Selesai</button>
+      </div>`);
+    $('#copyTiket').onclick = async () => { try { await navigator.clipboard.writeText(kode); toast('Kode disalin'); } catch { toast('Salin manual ya'); } };
+    e.target.reset(); $('#c-count').textContent = 0;
+  });
+
+  $('#formTiket').addEventListener('submit', e => {
+    e.preventDefault();
+    const kode = $('#t-kode').value.trim().toUpperCase();
+    const box = $('#tiketHasil'); box.classList.remove('hidden');
+    const t = store.get('vcbk_tiket', []).find(x => x.kode === kode);
+    if (!kode) { box.innerHTML = '<p class="text-red-600">Masukkan kode tiket dulu.</p>'; return; }
+    if (!t) { box.innerHTML = '<p class="text-red-600">Kode tidak ditemukan di perangkat ini. Pastikan penulisannya benar.</p>'; return; }
+    const tgl = new Date(t.waktu).toLocaleString('id-ID', { dateStyle: 'long', timeStyle: 'short' });
+    box.innerHTML = `<div class="rounded-xl bg-white border border-sage-200 p-4">
+      <p><strong>${esc(t.kode)}</strong> · ${esc(t.kategori)}</p>
+      <p class="text-sage-600">Dikirim: ${esc(tgl)}</p>
+      <p class="mt-2"><span class="px-2.5 py-1 rounded-full bg-sage-100 text-sage-700 text-xs font-bold">${esc(t.status)}</span></p>
+      <p class="mt-2 text-sage-700">Pesanmu sudah diterima dan menunggu ditanggapi Guru BK. (Pada versi demo, balasan tidak otomatis muncul.)</p></div>`;
+  });
+
+  /* ---------- Karier ---------- */
+  const karier = [
+    { ico: '🏅', judul: 'SNBP (Seleksi Nasional Berdasarkan Prestasi)', isi: 'Jalur seleksi tanpa tes yang menilai rapor dan prestasi. Cocok bagi siswa yang konsisten nilainya dan punya prestasi pendukung. Pastikan sekolah sudah terdaftar dan data nilai (PDSS) terisi lengkap. Pilih program studi yang sesuai minat, bukan sekadar yang ramai peminat.' },
+    { ico: '📝', judul: 'SNBT (Seleksi Nasional Berdasarkan Tes)', isi: 'Seleksi lewat tes (UTBK) yang menilai potensi kognitif, penalaran, dan literasi. Mulai latihan soal sejak awal, buat jadwal belajar yang realistis, dan pilih pilihan prodi dengan strategi: satu menantang, satu realistis, satu aman.' },
+    { ico: '🎖️', judul: 'Sekolah Kedinasan', isi: 'Pendidikan tinggi dengan ikatan dinas di instansi pemerintah. Biasanya ada seleksi administrasi, tes kemampuan, kesehatan, dan kebugaran. Siapkan fisik dan dokumen sejak dini, dan pahami aturan ikatan dinas sebelum mendaftar.' },
+    { ico: '🏫', judul: 'Politeknik, Vokasi & Jalur Mandiri', isi: 'Pendidikan vokasi menekankan praktik dan kesiapan kerja. Jalur mandiri PTN/PTS punya jadwal dan biaya masing-masing. Bandingkan akreditasi, biaya, dan peluang kerja lulusannya.' },
+    { ico: '💼', judul: 'Persiapan Dunia Kerja', isi: 'Siapkan CV sederhana, portofolio, dan keterampilan dasar seperti komunikasi, kerja tim, serta literasi digital. Ikuti magang atau pelatihan (misalnya BLK atau sertifikasi kompetensi) untuk menambah bekal. Cek juga informasi program beasiswa dan kerja sama sekolah dengan dunia usaha.' }
+  ];
+  $('#karierList').innerHTML = karier.map((k, i) => `
+    <div class="rounded-2xl border border-sage-100 bg-sage-50/60">
+      <button class="acc-btn w-full flex items-center justify-between gap-3 text-left p-4 font-bold" aria-expanded="false" aria-controls="acc${i}">
+        <span class="flex gap-3 items-center"><span class="text-2xl">${k.ico}</span>${k.judul}</span>
+        <svg class="chev w-5 h-5 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div id="acc${i}" class="acc-panel"><p class="px-4 pb-4 text-sm text-sage-700 leading-relaxed">${k.isi}</p></div>
+    </div>`).join('');
+  $$('.acc-btn').forEach(b => b.onclick = () => {
+    const p = b.nextElementSibling, open = b.getAttribute('aria-expanded') === 'true';
+    $$('.acc-btn').forEach(x => { x.setAttribute('aria-expanded', 'false'); x.nextElementSibling.style.maxHeight = 0; x.querySelector('.chev').style.transform = ''; });
+    if (!open) { b.setAttribute('aria-expanded', 'true'); p.style.maxHeight = p.scrollHeight + 'px'; b.querySelector('.chev').style.transform = 'rotate(180deg)'; }
+  });
+  const minat = {
+    sosial: 'Kamu mungkin cocok menjelajah bidang keguruan, psikologi, keperawatan, kesehatan masyarakat, atau pekerjaan sosial.',
+    teknis: 'Coba lihat bidang teknik, vokasi/politeknik, otomotif, elektro, atau teknologi terapan.',
+    analitis: 'Bidang sains data, matematika, ekonomi, akuntansi, atau teknologi informasi bisa jadi pilihan menarik.',
+    kreatif: 'Pertimbangkan desain, komunikasi, seni, arsitektur, atau industri kreatif digital.'
+  };
+  $$('.minat').forEach(b => b.onclick = () => {
+    const r = $('#minatHasil'); r.textContent = minat[b.dataset.m] + ' Ini hanya gambaran awal. Bahas lebih dalam dengan Guru BK lewat sesi konsultasi karier.'; r.classList.remove('hidden');
+  });
+
+  /* ---------- Psikoedukasi ---------- */
+  const artikel = [
+    { id: 1, kat: 'Manajemen Stres', ico: '🧘', judul: '5 Cara Cepat Meredakan Stres Sebelum Ujian', menit: 3, ringkas: 'Teknik sederhana yang bisa dicoba di bangku sekolah.',
+      isi: ['Stres sebelum ujian itu wajar. Tubuh sedang bersiap menghadapi tantangan. Masalah muncul saat stres terasa terlalu besar.', '<strong>1. Napas 4-6.</strong> Tarik napas 4 hitungan, hembuskan 6 hitungan, ulangi 5 kali.', '<strong>2. Pecah materi.</strong> Bagi bahan belajar menjadi bagian kecil dengan target harian.', '<strong>3. Gerak sebentar.</strong> Jalan kaki 10 menit membantu pikiran lebih jernih.', '<strong>4. Tidur cukup.</strong> Begadang membuat ingatan dan fokus menurun.', '<strong>5. Bicara.</strong> Ceritakan kekhawatiranmu ke teman, keluarga, atau Guru BK.'] },
+    { id: 2, kat: 'Motivasi Belajar', ico: '📚', judul: 'Malas Belajar? Mungkin Bukan Soal Malas', menit: 4, ringkas: 'Memahami penyebab kehilangan motivasi dan cara bangkit.',
+      isi: ['Kehilangan semangat sering datang dari kelelahan, target terlalu tinggi, atau tidak melihat tujuan dari yang dipelajari.', 'Coba aturan 10 menit: mulai belajar hanya 10 menit. Biasanya setelah mulai, lanjutnya lebih mudah.', 'Tulis alasan pribadi mengapa kamu belajar sesuatu, lalu tempel di meja belajar.', 'Rayakan hal kecil. Selesai satu bab sudah layak diapresiasi.', 'Bila rasa tidak bersemangat berlangsung lama dan disertai sedih atau lelah terus-menerus, ceritakan pada orang dewasa yang kamu percaya atau Guru BK.'] },
+    { id: 3, kat: 'Anti Bullying', ico: '🛡️', judul: 'Menghadapi Bullying: Apa yang Bisa Kamu Lakukan', menit: 4, ringkas: 'Langkah untuk korban, saksi, dan semua yang ingin lingkungan lebih aman.',
+      isi: ['Bullying bukan "bercanda" dan bukan salahmu. Perilaku yang menyakiti berulang, secara fisik, verbal, sosial, maupun daring, perlu dihentikan.', '<strong>Jika kamu korban:</strong> simpan bukti (tangkapan layar, catatan kejadian), jauhi pelaku bila aman, dan ceritakan kepada orang dewasa yang kamu percaya.', '<strong>Jika kamu saksi:</strong> jangan ikut menertawakan atau menyebarkan. Dukung korban dan laporkan.', '<strong>Jika kamu melakukannya:</strong> berhenti dan cari bantuan. Perilaku bisa diubah.', 'Kamu bisa melapor lewat Kotak Curhat Anonim atau datang langsung ke Ruang BK.'] },
+    { id: 4, kat: 'Kesehatan Mental', ico: '💚', judul: 'Mengenali Tanda Kamu Perlu Bantuan', menit: 4, ringkas: 'Kapan perasaan berat perlu ditemani profesional.',
+      isi: ['Sedih dan cemas itu bagian hidup. Namun perlu perhatian lebih bila berlangsung lebih dari dua minggu dan mengganggu belajar, makan, tidur, atau pertemananmu.', 'Tanda yang perlu diperhatikan: menarik diri dari orang lain, mudah marah tanpa sebab jelas, sulit tidur atau tidur berlebihan, merasa tidak berharga, atau berpikir menyakiti diri.', 'Meminta bantuan bukan tanda lemah. Itu tanda kamu peduli pada dirimu.', 'Jika ada pikiran menyakiti diri, segera hubungi orang dewasa terpercaya, layanan darurat 112, atau layanan kesehatan jiwa Kemenkes 119 (tekan 8).'] },
+    { id: 5, kat: 'Manajemen Stres', ico: '📱', judul: 'Media Sosial & Perasaan Tertinggal (FOMO)', menit: 3, ringkas: 'Cara tetap sehat saat scrolling tidak ada habisnya.',
+      isi: ['Media sosial menampilkan bagian terbaik hidup orang lain, bukan keseluruhannya.', 'Coba atur waktu layar, matikan notifikasi yang tidak penting, dan ikuti akun yang membuatmu merasa lebih baik.', 'Tanyakan pada dirimu: setelah membuka aplikasi ini, aku merasa lebih baik atau lebih buruk?', 'Isi harimu dengan aktivitas nyata yang kamu nikmati, seperti olahraga, hobi, atau berkumpul dengan teman.'] },
+    { id: 6, kat: 'Motivasi Belajar', ico: '⏰', judul: 'Manajemen Waktu ala Pelajar', menit: 3, ringkas: 'Jadwal yang realistis, bukan jadwal yang membuatmu menyerah.',
+      isi: ['Mulai dengan menulis semua tugas, lalu urutkan: mana yang penting dan mendesak, mana yang penting tapi tidak mendesak.', 'Gunakan teknik Pomodoro: belajar 25 menit, istirahat 5 menit.', 'Sisakan waktu untuk istirahat dan hal yang kamu suka. Jadwal yang terlalu padat justru mudah ditinggalkan.', 'Evaluasi tiap akhir minggu dan sesuaikan.'] },
+    { id: 7, kat: 'Kesehatan Mental', ico: '🤝', judul: 'Cara Mendengarkan Teman yang Sedang Sedih', menit: 3, ringkas: 'Jadi pendengar yang baik tanpa harus jadi penyelamat.',
+      isi: ['Hadir dan mendengarkan sering lebih berarti daripada memberi nasihat.', 'Kalimat yang membantu: "Aku di sini", "Terima kasih sudah cerita", "Mau kita cari bantuan bersama?"', 'Hindari meremehkan seperti "Gitu aja kok sedih" atau membandingkan dengan masalah orang lain.', 'Kamu bukan terapis. Bila temanmu menyebut ingin menyakiti diri, ajak ia bicara dengan orang dewasa atau Guru BK, dan jangan menyimpannya sendiri.'] },
+    { id: 8, kat: 'Anti Bullying', ico: '💬', judul: 'Cyberbullying: Berpikir Sebelum Mengetik', menit: 3, ringkas: 'Jejak digital dan dampak komentar yang terlihat sepele.',
+      isi: ['Komentar yang dianggap lucu bisa melukai dalam, apalagi bila dilihat banyak orang.', 'Sebelum mengirim, tanya dirimu: apakah ini benar, perlu, dan baik?', 'Bila kamu menjadi sasaran: jangan balas dengan kemarahan, simpan bukti, blokir, laporkan ke platform, dan beri tahu orang dewasa terpercaya.', 'Jejak digital sulit dihapus. Jaga nama baikmu dan orang lain.'] }
+  ];
+  const kats = ['Semua', ...new Set(artikel.map(a => a.kat))];
+  let aktif = 'Semua';
+  function renderArt() {
+    $('#artFilters').innerHTML = kats.map(k => `<button data-k="${k}" class="art-f shrink-0 px-4 py-2 rounded-full text-sm font-bold border transition ${k === aktif ? 'bg-teal-500 text-white border-teal-500' : 'bg-white text-sage-700 border-sage-200 hover:bg-sage-100'}">${k}</button>`).join('');
+    $('#artGrid').innerHTML = artikel.filter(a => aktif === 'Semua' || a.kat === aktif).map(a => `
+      <article class="bg-white rounded-2xl border border-sage-100 p-5 flex flex-col hover:shadow-lg hover:shadow-sage-500/10 hover:-translate-y-0.5 transition">
+        <div class="flex items-center justify-between">
+          <span class="text-3xl">${a.ico}</span>
+          <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-sage-100 text-sage-700">${a.kat}</span>
+        </div>
+        <h3 class="mt-3 font-extrabold leading-snug">${a.judul}</h3>
+        <p class="mt-1 text-sm text-sage-600 flex-1">${a.ringkas}</p>
+        <div class="mt-4 flex items-center justify-between">
+          <span class="text-xs text-sage-500">⏱ ${a.menit} menit baca</span>
+          <button data-id="${a.id}" class="art-open text-sm font-bold text-teal-600 hover:text-teal-700">Baca →</button>
+        </div>
+      </article>`).join('');
+    $$('.art-f').forEach(b => b.onclick = () => { aktif = b.dataset.k; renderArt(); });
+    $$('.art-open').forEach(b => b.onclick = () => {
+      const a = artikel.find(x => x.id == b.dataset.id);
+      openModal(a.judul, a.isi.map(p => `<p class="mb-3">${p}</p>`).join('') + `<p class="text-xs text-sage-500 mt-4">Bacaan ini bersifat edukatif dan bukan pengganti konsultasi profesional.</p>`,
+        `<button class="w-full bg-teal-500 hover:bg-teal-600 text-white font-bold py-3 rounded-2xl" onclick="document.getElementById('modalClose').click();location.hash='#layanan'">Mau ngobrol dengan Guru BK</button>`);
+    });
+  }
+  renderArt();
+
+  /* ---------- Breathing ---------- */
+  let breathing = false, breathTimer;
+  const circle = $('#breathCircle'), btxt = $('#breathText'), bbtn = $('#breathBtn');
+  function cycle(n) {
+    if (!breathing) return;
+    if (n > 5) { stopBreath(true); return; }
+    circle.className = 'breath in w-32 h-32 rounded-full bg-gradient-to-br from-teal-300 to-sage-300 grid place-items-center text-sage-900 font-bold text-center text-sm shadow-lg';
+    btxt.textContent = 'Tarik napas';
+    breathTimer = setTimeout(() => {
+      if (!breathing) return;
+      circle.classList.remove('in'); circle.classList.add('out'); btxt.textContent = 'Hembuskan';
+      breathTimer = setTimeout(() => cycle(n + 1), 6000);
+    }, 4000);
+  }
+  function stopBreath(done) {
+    breathing = false; clearTimeout(breathTimer);
+    circle.className = 'breath w-32 h-32 rounded-full bg-gradient-to-br from-teal-300 to-sage-300 grid place-items-center text-sage-900 font-bold text-center text-sm shadow-lg';
+    btxt.textContent = done ? 'Selesai 🌿' : 'Siap?'; bbtn.textContent = 'Mulai Latihan';
+    if (done) toast('Kerja bagus, semoga lebih tenang');
+  }
+  bbtn.onclick = () => {
+    if (breathing) return stopBreath(false);
+    breathing = true; bbtn.textContent = 'Berhenti'; cycle(1);
+  };
+})();
+</script>
+</body>
+</html>
